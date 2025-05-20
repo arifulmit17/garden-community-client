@@ -19,6 +19,7 @@ const Navbar = () => {
       <li><Link to={'/'}>Home</Link></li>
       <li><NavLink to={'/sharegardentips'}>Share a Garden Tip (Private)</NavLink></li>
       <li><Link to={'/exploreGardners'}>Explore Gardeners</Link></li>
+      <li><Link to={'/browsetips'}>Browse tips</Link></li>
       <li><a>My Tips (Private)</a></li>
       <li><a>Signup</a></li>
     </>
@@ -35,7 +36,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl"> <span className='text-green-800'>Garden</span>Community</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -43,6 +44,8 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    <h1>{user?.displayName}</h1>
+    <img className='size-10 rounded-full' src={user?.photoURL} alt="User photo" />
       <a onClick={handleLogout} className='btn bg-white'>Log out</a>
     <NavLink to={'/login'} className="btn">Login</NavLink>
   </div>

@@ -1,12 +1,44 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const ShareGardenTips = () => {
     const {user}=use(AuthContext)
     console.log(user);
+
+    const handleSubmit=e=>{
+        e.preventDefault()
+        const form=e.target;
+        const formData = new FormData(form);
+        const newGarden = Object.fromEntries(formData.entries())
+        console.log(newGarden);
+
+        fetch('http://localhost:3000/gardens', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newGarden)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    console.log('added successfully.')
+
+                    Swal.fire({
+                        title: "Data added successfully!",
+                        icon: "success",
+                        draggable: true
+                      });
+
+                    //   form.reset()
+                }
+            })
+
+    }
     return (
         <div>
-            <form className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
+            <form onSubmit={handleSubmit} className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                 <input type="text" name='user' value={user.displayName} placeholder="User" className="input" />
                 <input type="text" name='email' value={user.email} placeholder="Email" className="input" />
                 <input type="text" name='title' placeholder="title" className="input" />
@@ -32,15 +64,9 @@ const ShareGardenTips = () => {
                     <option value="Public"></option>
                     <option value="Hidden"></option>
                     </datalist>
-            <button type='btn submit'>Submit</button>
+            <button  type='btn submit'>Submit</button>
             </form>
-            Title (e.g., “How I Grow Tomatoes Indoors”)
-Plant Type/Topic
-Difficulty Level (Easy/Medium/Hard). [Use select type]
-Description
-Images url
-Category (i.e, Composting, Plant Care, Vertical Gardening, etc.). [Use select type]
-Availability (Public or Hidden). [Use select type]
+            
 
         </div>
     );

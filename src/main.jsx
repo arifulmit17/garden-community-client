@@ -14,6 +14,8 @@ import AuthProvider from './Context/AuthProvider.jsx';
 import Register from './Pages/Register.jsx';
 import ShareGardenTips from './Pages/ShareGardenTips.jsx';
 import PrivateRoutes from './PrivateRoutes.jsx';
+import BrowseTips from './Pages/BrowseTips.jsx';
+import TipDetails from './Pages/TipDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -23,7 +25,8 @@ const router = createBrowserRouter([
     children: [
       {
         index:true, 
-        Component: Home
+        Component: Home,
+        loader: ()=>fetch('http://localhost:3000/gardeners')
       },
       {
         path:'/login',
@@ -35,7 +38,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/exploreGardners',
-        Component: ExploreGardners
+        Component: ExploreGardners,
+        loader: ()=>fetch('http://localhost:3000/gardeners')
       },
       {
         path: '/sharegardentips',
@@ -43,6 +47,20 @@ const router = createBrowserRouter([
               <ShareGardenTips></ShareGardenTips>
         </PrivateRoutes>
         
+      },
+      {
+        path: '/tipdetails/:id',
+        element: <PrivateRoutes>
+              <TipDetails></TipDetails>
+        </PrivateRoutes>,
+        loader: ({params})=>fetch(`http://localhost:3000/gardens/${params.id}`)
+        
+        
+      },
+      {
+        path: '/browsetips',
+        Component: BrowseTips,
+        loader: ()=>fetch('http://localhost:3000/gardens')
       }
     ]
   },
