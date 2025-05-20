@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path: '/browsetips',
         Component: BrowseTips,
-        loader: ()=>fetch('http://localhost:3000/gardens')
+        loader: ()=>fetch('http://localhost:3000/gardens_public')
       }
     ]
   },
