@@ -48,7 +48,7 @@ const ShareGardenTips = () => {
                 <input type="text" name='difficulty' className="input" placeholder="Difficulty level" list="difficulty" />
                     <datalist id="difficulty">
                     <option value="Easy"></option>
-                    <option value="Difficult"></option>
+                    <option value="Medium"></option>
                     <option value="Hard"></option>
                     </datalist>
                 <input type="text" name='description' placeholder="Description" className="input" />

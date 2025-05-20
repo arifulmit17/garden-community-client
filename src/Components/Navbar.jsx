@@ -21,7 +21,7 @@ const Navbar = () => {
       <li><Link to={'/exploreGardners'}>Explore Gardeners</Link></li>
       <li><Link to={'/browsetips'}>Browse tips</Link></li>
       <li><a>My Tips (Private)</a></li>
-      <li><a>Signup</a></li>
+      <li><Link to={'/register'}>Signup</Link></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">

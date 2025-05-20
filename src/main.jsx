@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: '/exploreGardners',
         Component: ExploreGardners,
-        loader: ()=>fetch('http://localhost:3000/gardeners')
+        loader: ()=>fetch('http://localhost:3000/gardeners_full')
       },
       {
         path: '/sharegardentips',

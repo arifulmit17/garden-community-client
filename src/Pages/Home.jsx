@@ -12,6 +12,7 @@ const Home = () => {
                 <Banner></Banner>
             </section>
             <section>
+                <h1 className='font-bold text-5xl'>Featured Gardeners</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >
                     {
                         gardeners.map(gardener=><Gardener key={gardener._id} gardener={gardener}></Gardener>)

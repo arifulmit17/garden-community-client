@@ -6,7 +6,7 @@ const Gardener = ({gardener}) => {
         <div className="card lg:card-side bg-base-100 shadow-sm">
   <figure>
     <img
-      src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+      src={gardener.image}
       alt="Album" />
   </figure>
   <div className="card-body">
