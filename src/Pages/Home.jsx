@@ -18,7 +18,7 @@ const Home = ({tipsPromise}) => {
                 <Banner></Banner>
             </section>
             <section>
-                <h1 className='font-bold text-5xl text-center'>Featured Gardeners</h1>
+                <h1 className='font-bold text-5xl text-center my-10'>Featured Gardeners</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >
                     {
                         gardeners.map(gardener=><Gardener key={gardener._id} gardener={gardener}></Gardener>)
@@ -26,7 +26,7 @@ const Home = ({tipsPromise}) => {
                 </div>
             </section>
             <section>
-                <h1 className='font-bold text-5xl text-center'>Top Trending Tips</h1>
+                <h1 className='font-bold text-5xl text-center my-10'>Top Trending Tips</h1>
                 <div className="overflow-x-auto">
   <table className="table">
     {/* head */}

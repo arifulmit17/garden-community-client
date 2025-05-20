@@ -20,7 +20,7 @@ const Navbar = () => {
       <li><NavLink to={'/sharegardentips'}>Share a Garden Tip (Private)</NavLink></li>
       <li><Link to={'/exploreGardners'}>Explore Gardeners</Link></li>
       <li><Link to={'/browsetips'}>Browse tips</Link></li>
-      <li><a>My Tips (Private)</a></li>
+      <li><Link to={'/mytipspage'}>My Tips (Private)</Link></li>
       <li><Link to={'/register'}>Signup</Link></li>
     </>
     return (

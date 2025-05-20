@@ -16,6 +16,7 @@ import ShareGardenTips from './Pages/ShareGardenTips.jsx';
 import PrivateRoutes from './PrivateRoutes.jsx';
 import BrowseTips from './Pages/BrowseTips.jsx';
 import TipDetails from './Pages/TipDetails.jsx';
+import MyTipsPage from './Pages/MyTipsPage.jsx';
 
 const tipsPromise=fetch('http://localhost:3000/gardens').then(res=>res.json())
     
@@ -50,6 +51,13 @@ const router = createBrowserRouter([
         path: '/sharegardentips',
         element: <PrivateRoutes>
               <ShareGardenTips></ShareGardenTips>
+        </PrivateRoutes>
+        
+      },
+      {
+        path: '/mytipspage',
+        element: <PrivateRoutes>
+              <MyTipsPage></MyTipsPage>
         </PrivateRoutes>
         
       },
