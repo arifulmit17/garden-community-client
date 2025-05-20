@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -17,6 +17,8 @@ import PrivateRoutes from './PrivateRoutes.jsx';
 import BrowseTips from './Pages/BrowseTips.jsx';
 import TipDetails from './Pages/TipDetails.jsx';
 
+const tipsPromise=fetch('http://localhost:3000/gardens').then(res=>res.json())
+    
 
 const router = createBrowserRouter([
   {
@@ -25,8 +27,11 @@ const router = createBrowserRouter([
     children: [
       {
         index:true, 
-        Component: Home,
-        loader: ()=>fetch('http://localhost:3000/gardeners')
+        
+        loader: ()=>fetch('http://localhost:3000/gardeners'),
+        element: <Suspense loader={<h1>Data is loading</h1>}>
+          <Home tipsPromise={tipsPromise}></Home>
+        </Suspense>
       },
       {
         path:'/login',

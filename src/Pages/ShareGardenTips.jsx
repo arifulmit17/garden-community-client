@@ -64,7 +64,7 @@ const ShareGardenTips = () => {
                     <option value="Public"></option>
                     <option value="Hidden"></option>
                     </datalist>
-            <button  type='btn submit'>Submit</button>
+            <button className='btn w-full btn-primary' type=' submit'>Submit</button>
             </form>
             
 
