@@ -2,8 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router';
 
 const TipsTableRows = ({tip}) => {
-    console.log(tip);
-
+    
     return (
         <tr>
         <td>
@@ -21,6 +20,7 @@ const TipsTableRows = ({tip}) => {
           {tip.title}
         </td>
         <td>{tip.category}</td>
+        <td>{tip.difficulty}</td>
         <th>
             <NavLink to={`/tipdetails/${tip._id}`}>
                     <button className="btn btn-ghost btn-xs">See More</button>

@@ -17,6 +17,7 @@ import PrivateRoutes from './PrivateRoutes.jsx';
 import BrowseTips from './Pages/BrowseTips.jsx';
 import TipDetails from './Pages/TipDetails.jsx';
 import MyTipsPage from './Pages/MyTipsPage.jsx';
+import ErrorPage from './Pages/ErrorPage.jsx';
 
 const tipsPromise=fetch('http://localhost:3000/gardens').then(res=>res.json())
     
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+          path: '/*',
+          element: <ErrorPage></ErrorPage>
+  }
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>

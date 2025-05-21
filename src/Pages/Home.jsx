@@ -1,21 +1,60 @@
 import React, { use } from 'react';
-import Banner from '../Components/Banner';
-import { useLoaderData } from 'react-router';
+import { NavLink, useLoaderData } from 'react-router';
 import Gardener from './Gardener';
 import TipsTableRows from '../Components/TipsTableRows';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import './styles.css';
+
+import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 const Home = ({tipsPromise}) => {
     const gardeners=useLoaderData()
     
     const tips=use(tipsPromise)
     console.log(tips);
-
+    
     
     
     return (
         <div>
             <section>
-                <Banner></Banner>
+                <Swiper
+                        spaceBetween={30}
+                        effect={'fade'}
+                        navigation={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        modules={[EffectFade, Navigation, Pagination]}
+                        className="mySwiper"
+                      >
+                
+                
+                          <SwiperSlide>
+                          <div className='h-[700px] w-[1500px] flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/svJrjqdD/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
+                          <button className="bg-green-500 border-none text-white btn">Explore Now</button>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='h-[700px] w-[1500px]  flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/YBWyF8nv/29079-hd.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Care for Nature</h1>
+                          <button className="bg-green-500 border-none text-white btn">Explore Now</button>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='h-[700px] w-[1500px] flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/fzhw2HH8/Garden-hero.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Be One with the Nature</h1>
+                          <button className="bg-green-500 border-none text-white btn">Explore Now</button>
+                          </div>
+                        </SwiperSlide>
+                      </Swiper>
             </section>
             <section>
                 <h1 className='font-bold text-5xl text-center my-10'>Featured Gardeners</h1>
@@ -50,10 +89,49 @@ const Home = ({tipsPromise}) => {
   </table>
 </div>
             </section>
-            <section>
-                <h1>Faq</h1>
+
+<section>
+                <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
+                <div  className='w-11/12 mx-auto lg:flex'>
+                <div className='w-5/12 '>
+                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.ibb.co/JXrFNDY/member.png" alt="" />
+                </div>
+                <div className='w-7/12 mx-5 mb-5'>
+                    <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
+                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on creating a unique experience for our valued members through giving some opportunities that is rare in the subscription market. Benefits include.</p>
+                    <ol className='h-1/2 mt-3 flex flex-col justify-between'>
+                      <li>1. Easily browse, subscribe to, and manage monthly subscription boxes based on your preferences</li>
+
+                      <li>2. A personalized experience where customers can select different boxes for various products or services</li>
+
+                      <li>3. Each box is curated with items tailored to the user’s interests, ensuring that they receive something new and exciting each month</li>
+                    </ol>
+                    <NavLink to={'/register'}>
+                     <button className='text-white ml-40 rounded-2xl btn bg-gray-400 btn-wide'>Register Now</button>
+                     </NavLink>
+                </div>
+            </div>
             </section>
-            <section>Blogs</section>
+
+            <section>
+                <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
+                <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" defaultChecked />
+  <div className="collapse-title font-semibold">How do I create an account?</div>
+  <div className="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+</div>
+<div className="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" />
+  <div className="collapse-title font-semibold">I forgot my password. What should I do?</div>
+  <div className="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+</div>
+<div className="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" />
+  <div className="collapse-title font-semibold">How do I update my profile information?</div>
+  <div className="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+</div>
+            </section>
+            
         </div>
     );
 };
