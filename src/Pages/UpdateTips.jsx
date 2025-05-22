@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
 const UpdateTips = () => {
-    const {_id,photo,category,difficulty,plant,title,description,availability}=useLoaderData()
+    const {_id,totalliked,photo,category,difficulty,plant,title,description,availability}=useLoaderData()
     
     const {user}=use(AuthContext)
     
@@ -62,7 +62,7 @@ const UpdateTips = () => {
                     <option value="Public"></option>
                     <option value="Hidden"></option>
                     </datalist>
-             <input type="text" name='totalliked' defaultValue={2} placeholder="total liked" className="input" />
+             <input type="text" name='totalliked' defaultValue={totalliked} placeholder="total liked" className="input" />
             <button className='btn w-full btn-primary' type=' submit'>Update</button>
             </form>
             

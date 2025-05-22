@@ -3,9 +3,20 @@ import { Link, NavLink } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Context/AuthContext';
 
+import { IoMoon } from "react-icons/io5";
+import { IoSunny } from "react-icons/io5";
+import Switcher from './switcher';
+
+
+
 const Navbar = () => {
   const {user, LogOutUser}=use(AuthContext);
+  const [dark, setDark] = React.useState(false);
 
+    const darkModeHandler = () => {
+        setDark(!dark);
+        document.body.classList.toggle("dark");
+    }
   const handleLogout=()=>{
       LogOutUser().then(()=>{
 
@@ -24,7 +35,7 @@ const Navbar = () => {
       <li><Link to={'/register'}>Signup</Link></li>
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-green-400 shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,6 +55,16 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    <button onClick={()=> darkModeHandler()}>
+      {
+          
+          dark && <IoSunny /> // render sunny when dark is true
+      }
+      {
+          !dark && <IoMoon /> // render moon when dark is false
+      }
+ </button>
+    <Switcher></Switcher>
     <h1>{user?.displayName}</h1>
     <img className='size-10 rounded-full' src={user?.photoURL} alt="User photo" />
       <a onClick={handleLogout} className='btn bg-white'>Log out</a>

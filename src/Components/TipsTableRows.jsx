@@ -21,6 +21,7 @@ const TipsTableRows = ({tip}) => {
         </td>
         <td>{tip.category}</td>
         <td>{tip.difficulty}</td>
+        <td>{tip.totalliked}</td>
         <th>
             <NavLink to={`/tipdetails/${tip._id}`}>
                     <button className="btn btn-ghost btn-xs">See More</button>

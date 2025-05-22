@@ -52,6 +52,7 @@ const MytipsTableRow = ({tip}) => {
         </td>
         <td>{tip.category}</td>
         <td>{tip.difficulty}</td>
+        <td>{tip.totalliked}</td>
         <th>
             <button onClick={()=>handleDelete(tip._id)} className="btn btn-primary">Delete</button>
         <NavLink to={`/updatetips/${tip._id}`}>

@@ -2,7 +2,7 @@ import React, { use } from 'react';
 import { NavLink, useLoaderData } from 'react-router';
 import Gardener from './Gardener';
 import TipsTableRows from '../Components/TipsTableRows';
-
+import { Tooltip } from 'react-tooltip'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,6 +15,7 @@ import 'swiper/css/pagination';
 import './styles.css';
 
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Home = ({tipsPromise}) => {
     const gardeners=useLoaderData()
@@ -25,7 +26,7 @@ const Home = ({tipsPromise}) => {
     
     
     return (
-        <div>
+        <div >
             <section>
                 <Swiper
                         spaceBetween={30}
@@ -57,7 +58,20 @@ const Home = ({tipsPromise}) => {
                       </Swiper>
             </section>
             <section>
-                <h1 className='font-bold text-5xl text-center my-10'>Featured Gardeners</h1>
+                
+                <h1 className='font-bold text-5xl text-center my-10'>Featured Gardeners <span style={{ color: 'green', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={['Section', 'Pool', 'Here']}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+
+          />
+        </span></h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >
                     {
                         gardeners.map(gardener=><Gardener key={gardener._id} gardener={gardener}></Gardener>)
@@ -74,7 +88,8 @@ const Home = ({tipsPromise}) => {
         <th>Image</th>
         <th>title</th>
         <th>Category</th>
-        <th></th>
+        <th>Difficulty</th>
+        <th>Likes</th>
       </tr>
     </thead>
     <tbody>
@@ -91,6 +106,16 @@ const Home = ({tipsPromise}) => {
             </section>
 
 <section>
+    <div className='w-full flex items-center justify-around'>
+<a className="bg-green-400 h-16 p-2 rounded-full my-anchor-element">◕‿‿◕</a>
+<a className="bg-green-400 h-16 p-2 rounded-full my-anchor-element">◕‿‿◕</a>
+<a className="bg-green-400 h-16 p-2 rounded-full my-anchor-element">◕‿‿◕</a>
+    </div>
+    
+<Tooltip  anchorSelect=".my-anchor-element" place="top">
+    Hello Gardeners !
+</Tooltip>
+
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
                 <div className='w-5/12 '>

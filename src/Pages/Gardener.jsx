@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Gardener = ({gardener}) => {
-    console.log(gardener);
     return (
         <div className="card lg:card-side bg-base-100 shadow-sm">
   <figure>

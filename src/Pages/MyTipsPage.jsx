@@ -16,6 +16,7 @@ const MyTipsPage = () => {
         <th>title</th>
         <th>Category</th>
         <th>Difficulty</th>
+        <th>Likes</th>
       </tr>
     </thead>
     <tbody>
