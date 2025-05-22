@@ -31,8 +31,8 @@ const TipDetails = () => {
     
     
     return (
-        <div className="card my-20 mx-auto lg:w-1/2 lg:card-side bg-green-200 shadow-sm">
-  <figure>
+        <div className="card dark:text-white dark:bg-green-700 my-20 mx-auto lg:w-1/2 lg:card-side bg-green-200 shadow-sm">
+  <figure className='w-[300px] h-[300px]'>
     <img
       src={tip.photo}
       alt="tip" />

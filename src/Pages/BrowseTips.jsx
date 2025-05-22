@@ -18,21 +18,21 @@ const BrowseTips = () => {
     }
     return (
         
-        <div className="overflow-x-auto">
-            <form onSubmit={handleSort}>
+        <div className="overflow-x-auto dark:bg-green-700 dark:text-white bg-green-200">
+            <form onSubmit={handleSort} className='ml-100'>
                 <input type="text" name='difficulty' className="input" placeholder="Difficulty level" list="difficulty" />
                     <datalist id="difficulty">
                     <option value="Easy"></option>
                     <option value="Medium"></option>
                     <option value="Hard"></option>
                     </datalist>
-                <button type='submit'>Submit</button>
+                <button type='submit' className='btn ml-5 dark:bg-green-300 dark:text-black border-none text-white bg-green-800'>Submit</button>
             </form>
            
-  <table className="table">
+  <table className="table dark:text-white">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='dark:text-white'>
         <th>Image</th>
         <th>title</th>
         <th>Category</th>

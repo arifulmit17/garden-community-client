@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { use} from 'react';
 import { useLoaderData } from 'react-router';
 import MytipsTableRow from '../Components/MytipsTableRow';
+import { AuthContext } from '../Context/AuthContext';
 
 
 const MyTipsPage = () => {
+    const {user}=use(AuthContext)
     const mytips=useLoaderData()
+    const tiplist=  mytips.filter(tip=>tip.email==user.email)
+
     return (
         <div>
             <table className="table">
@@ -21,7 +25,7 @@ const MyTipsPage = () => {
     <tbody>
       {/* row 1 */}
       {
-        mytips.map(tip=><MytipsTableRow tip={tip}></MytipsTableRow>)
+        tiplist.map(tip=><MytipsTableRow tip={tip}></MytipsTableRow>)
       }
       
       

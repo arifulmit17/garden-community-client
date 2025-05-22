@@ -5,7 +5,7 @@ import Gardener from './Gardener';
 const ExploreGardners = () => {
     const gardeners=useLoaderData()
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >
+        <div className='dark:bg-green-700 bg-green-300 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >
                     {
                         gardeners.map(gardener=><Gardener key={gardener._id} gardener={gardener}></Gardener>)
                     }

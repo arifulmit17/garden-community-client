@@ -61,6 +61,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
               <MyTipsPage></MyTipsPage>
         </PrivateRoutes>,
+        // loader: ()=>fetch('http://localhost:3000/gardens_user')
         loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardens_user')
         
       },
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
               <UpdateTips></UpdateTips>
         </PrivateRoutes>,
-        loader: ({params})=>fetch(`https://b11a10garden-community-server.vercel.app//gardens/${params.id}`)
+        loader: ({params})=>fetch(`https://b11a10garden-community-server.vercel.app/gardens/${params.id}`)
         
       },
       {
