@@ -12,7 +12,7 @@ const ShareGardenTips = () => {
         const formData = new FormData(form);
         const newGarden = Object.fromEntries(formData.entries())
 
-        fetch('http://localhost:3000/gardens', {
+        fetch('https://b11a10garden-community-server.vercel.app/gardens', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

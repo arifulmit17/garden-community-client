@@ -20,7 +20,7 @@ import MyTipsPage from './Pages/MyTipsPage.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
 import UpdateTips from './Pages/UpdateTips.jsx';
 
-const tipsPromise=fetch('http://localhost:3000/gardens').then(res=>res.json())
+const tipsPromise=fetch('https://b11a10garden-community-server.vercel.app/gardens').then(res=>res.json())
     
 
 const router = createBrowserRouter([
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         index:true, 
         
-        loader: ()=>fetch('http://localhost:3000/gardeners'),
+        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardeners'),
         element: <Suspense loader={<h1>Data is loading</h1>}>
           <Home tipsPromise={tipsPromise}></Home>
         </Suspense>
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: '/exploreGardners',
         Component: ExploreGardners,
-        loader: ()=>fetch('http://localhost:3000/gardeners_full')
+        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardeners_full')
       },
       {
         path: '/sharegardentips',
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
               <MyTipsPage></MyTipsPage>
         </PrivateRoutes>,
-        loader: ()=>fetch('http://localhost:3000/gardens_user')
+        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardens_user')
         
       },
       {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
               <UpdateTips></UpdateTips>
         </PrivateRoutes>,
-        loader: ({params})=>fetch(`http://localhost:3000/gardens/${params.id}`)
+        loader: ({params})=>fetch(`https://b11a10garden-community-server.vercel.app//gardens/${params.id}`)
         
       },
       {
@@ -77,14 +77,14 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
               <TipDetails></TipDetails>
         </PrivateRoutes>,
-        loader: ({params})=>fetch(`http://localhost:3000/gardens/${params.id}`)
+        loader: ({params})=>fetch(`https://b11a10garden-community-server.vercel.app/gardens/${params.id}`)
         
         
       },
       {
         path: '/browsetips',
         Component: BrowseTips,
-        loader: ()=>fetch('http://localhost:3000/gardens_public')
+        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardens_public')
       }
     ]
   },
