@@ -24,7 +24,7 @@ const TipsTableRows = ({tip}) => {
         <td>{tip.totalliked}</td>
         <th>
             <NavLink to={`/tipdetails/${tip._id}`}>
-                    <button className="btn btn-ghost btn-xs">See More</button>
+                    <button className="btn bg-green-500 text-white btn-xs">See More</button>
             </NavLink>
           
         </th>

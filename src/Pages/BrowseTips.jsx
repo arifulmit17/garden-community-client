@@ -5,7 +5,6 @@ import TipsTableRows from '../Components/TipsTableRows';
 const BrowseTips = () => {
     
     const gardentips=useLoaderData();
-    console.log(gardentips);
     const [prefered,setPrefered]=useState(gardentips)
     const handleSort=e=>{
         e.preventDefault()

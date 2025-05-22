@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 
 const MytipsTableRow = ({tip}) => {
     const handleDelete=(id)=>{
-        console.log(id);
         Swal.fire({
   title: "Are you sure?",
   text: "You won't be able to revert this!",
@@ -54,12 +53,12 @@ const MytipsTableRow = ({tip}) => {
         <td>{tip.difficulty}</td>
         <td>{tip.totalliked}</td>
         <th>
-            <button onClick={()=>handleDelete(tip._id)} className="btn btn-primary">Delete</button>
+            <button onClick={()=>handleDelete(tip._id)} className="btn text-white bg-green-600 btn-xs">Delete</button>
         <NavLink to={`/updatetips/${tip._id}`}>
-            <button className="btn btn-primary">Update</button>
+            <button className="btn text-white bg-green-600 btn-xs">Update</button>
         </NavLink>
             <NavLink to={`/tipdetails/${tip._id}`}>
-                    <button className="btn btn-ghost btn-xs">See More</button>
+                    <button className="btn text-white bg-green-600 btn-xs">See More</button>
             </NavLink>
           
         </th>

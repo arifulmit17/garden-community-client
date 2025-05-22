@@ -21,12 +21,12 @@ const Home = ({tipsPromise}) => {
     const gardeners=useLoaderData()
     
     const tips=use(tipsPromise)
-    console.log(tips);
+    
     
     
     
     return (
-        <div >
+        <div className='bg-green-200 dark:bg-green-800'>
             <section>
                 <Swiper
                         spaceBetween={30}
@@ -41,17 +41,17 @@ const Home = ({tipsPromise}) => {
                 
                 
                           <SwiperSlide>
-                          <div className='h-[700px] w-[1500px] flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/svJrjqdD/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
+                          <div className='h-[700px] w-full flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/svJrjqdD/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
                           <button className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='h-[700px] w-[1500px]  flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/YBWyF8nv/29079-hd.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Care for Nature</h1>
+                            <div className='h-[700px] w-full bg-no-repeat bg-cover flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/YBWyF8nv/29079-hd.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Care for Nature</h1>
                           <button className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='h-[700px] w-[1500px] flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/fzhw2HH8/Garden-hero.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Be One with the Nature</h1>
+                            <div className='h-[700px] w-full flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/fzhw2HH8/Garden-hero.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Be One with the Nature</h1>
                           <button className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
@@ -132,7 +132,7 @@ const Home = ({tipsPromise}) => {
                       <li>3. Each box is curated with items tailored to the user’s interests, ensuring that they receive something new and exciting each month</li>
                     </ol>
                     <NavLink to={'/register'}>
-                     <button className='text-white ml-40 rounded-2xl btn bg-gray-400 btn-wide'>Register Now</button>
+                     <button className='text-white ml-40 rounded-2xl btn bg-green-500 btn-wide'>Register Now</button>
                      </NavLink>
                 </div>
             </div>

@@ -5,7 +5,6 @@ import MytipsTableRow from '../Components/MytipsTableRow';
 
 const MyTipsPage = () => {
     const mytips=useLoaderData()
-    console.log(mytips);
     return (
         <div>
             <table className="table">

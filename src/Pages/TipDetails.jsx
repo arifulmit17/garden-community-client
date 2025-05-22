@@ -9,7 +9,7 @@ const TipDetails = () => {
     const handleLike=(_id)=>{
         const newlike=parseInt(tip.totalliked)+1
         const like={totalliked:newlike}
-        console.log(tip);
+        console.log(like);
         fetch(`http://localhost:3000/gardens_like/${_id}`,{
                     method: 'PUT',
                     headers: {
@@ -31,21 +31,21 @@ const TipDetails = () => {
     
     
     return (
-        <div className="card lg:card-side bg-base-100 shadow-sm">
+        <div className="card my-20 mx-auto lg:w-1/2 lg:card-side bg-green-200 shadow-sm">
   <figure>
     <img
       src={tip.photo}
       alt="tip" />
   </figure>
   <div className="card-body">
-    <h2 className="card-title">{tip.title}</h2>
+    <h2 className="card-title">Name: {tip.title}</h2>
     <p> {tip.description}</p>
     <h3>Category: {tip.category}</h3>
     <h2>Difficulty: {tip.difficulty}</h2>
     <h2>Likes: {tip.totalliked}</h2>
     <div className="card-actions justify-end">
         
-      <button onClick={()=>handleLike(tip._id)} className="btn btn-primary">Like</button>
+      <button onClick={()=>handleLike(tip._id)} className="btn bg-green-600">Like</button>
     </div>
   </div>
 </div>
