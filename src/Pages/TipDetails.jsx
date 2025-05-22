@@ -1,7 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, Link, NavLink } from 'react-router';
+import Swal from 'sweetalert2';
 
 const TipDetails = () => {
+    
     const tip=useLoaderData()
     console.log(tip);
     return (
@@ -17,6 +19,7 @@ const TipDetails = () => {
     <h3>{tip.category}</h3>
     <h2>{tip.difficulty}</h2>
     <div className="card-actions justify-end">
+        
       <button className="btn btn-primary">Like</button>
     </div>
   </div>

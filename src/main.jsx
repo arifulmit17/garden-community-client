@@ -18,6 +18,7 @@ import BrowseTips from './Pages/BrowseTips.jsx';
 import TipDetails from './Pages/TipDetails.jsx';
 import MyTipsPage from './Pages/MyTipsPage.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
+import UpdateTips from './Pages/UpdateTips.jsx';
 
 const tipsPromise=fetch('http://localhost:3000/gardens').then(res=>res.json())
     
@@ -59,7 +60,16 @@ const router = createBrowserRouter([
         path: '/mytipspage',
         element: <PrivateRoutes>
               <MyTipsPage></MyTipsPage>
-        </PrivateRoutes>
+        </PrivateRoutes>,
+        loader: ()=>fetch('http://localhost:3000/gardens_user')
+        
+      },
+      {
+        path: '/updatetips/:id',
+        element: <PrivateRoutes>
+              <UpdateTips></UpdateTips>
+        </PrivateRoutes>,
+        loader: ({params})=>fetch(`http://localhost:3000/gardens/${params.id}`)
         
       },
       {

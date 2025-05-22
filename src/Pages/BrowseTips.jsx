@@ -12,6 +12,7 @@ const BrowseTips = () => {
         const prefer=e.target.difficulty.value;
         
         const preferedset=gardentips.filter(tips=> tips.difficulty==prefer)
+       
         setPrefered(preferedset)
         
 
