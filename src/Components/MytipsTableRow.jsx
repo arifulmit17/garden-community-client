@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router';
 import Swal from 'sweetalert2';
 
-const MytipsTableRow = ({tip}) => {
+const MytipsTableRow = ({tip,mytips,setMytips}) => {
     const handleDelete=(id)=>{
         Swal.fire({
   title: "Are you sure?",
@@ -23,6 +23,8 @@ const MytipsTableRow = ({tip}) => {
         text: "Your file has been deleted.",
         icon: "success"
     });
+    const remainingtips=mytips.filter(tips=>tips._id!==id)
+    setMytips(remainingtips);
         }
     })
 

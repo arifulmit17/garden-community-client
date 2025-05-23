@@ -1,4 +1,4 @@
-import React, { use} from 'react';
+import React, { use, useState} from 'react';
 import { useLoaderData } from 'react-router';
 import MytipsTableRow from '../Components/MytipsTableRow';
 import { AuthContext } from '../Context/AuthContext';
@@ -6,7 +6,8 @@ import { AuthContext } from '../Context/AuthContext';
 
 const MyTipsPage = () => {
     const {user}=use(AuthContext)
-    const mytips=useLoaderData()
+    const initialtips=useLoaderData()
+    const [mytips,setMytips]=useState(initialtips)
     const tiplist=  mytips.filter(tip=>tip.email==user.email)
 
     return (
@@ -25,7 +26,7 @@ const MyTipsPage = () => {
     <tbody>
       {/* row 1 */}
       {
-        tiplist.map(tip=><MytipsTableRow tip={tip}></MytipsTableRow>)
+        tiplist.map(tip=><MytipsTableRow key={tip._id} tip={tip} mytips={mytips} setMytips={setMytips}></MytipsTableRow>)
       }
       
       
