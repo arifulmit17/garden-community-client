@@ -142,18 +142,18 @@ const Home = ({tipsPromise}) => {
                 <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
                 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" defaultChecked />
-  <div className="collapse-title  font-semibold">How do I create an account?</div>
+  <div className="collapse-title  font-semibold">How do I get into the community?</div>
   <div className="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
 </div>
 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" />
-  <div className="collapse-title font-semibold">I forgot my password. What should I do?</div>
-  <div className="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+  <div className="collapse-title font-semibold">I cannot find the logout button , where is it?</div>
+  <div className="collapse-content text-sm">Click on your image at the top right corner and the logout button will appear, then click on logout button</div>
 </div>
 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" />
-  <div className="collapse-title font-semibold">How do I update my profile information?</div>
-  <div className="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+  <div className="collapse-title font-semibold">How do I update my tips information?</div>
+  <div className="collapse-content text-sm">Go to mytips section and browse to the tip you want to update, click update button, then an update info page will appear and you can update your information.</div>
 </div>
             </section>
             
