@@ -7,7 +7,7 @@ import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
 import Switcher from './switcher';
 
-
+import './Navbar.css'
 
 const Navbar = () => {
   const {user, LogOutUser}=use(AuthContext);
@@ -23,10 +23,10 @@ const Navbar = () => {
     }
     const links=<>
       <li><Link to={'/'}>Home</Link></li>
-      <li><NavLink to={'/sharegardentips'}>Share a Garden Tip (Private)</NavLink></li>
+      {user && <><li><NavLink to={'/sharegardentips'}>Share a Garden Tip (Private)</NavLink></li></>}
       <li><Link to={'/exploreGardners'}>Explore Gardeners</Link></li>
       <li><Link to={'/browsetips'}>Browse tips</Link></li>
-      <li><Link to={'/mytipspage'}>My Tips (Private)</Link></li>
+      {user && <><li><Link to={'/mytipspage'}>My Tips (Private)</Link></li></>}
       <li><Link to={'/register'}>Signup</Link></li>
     </>
     return (
@@ -52,10 +52,22 @@ const Navbar = () => {
   <div className="navbar-end">
     
     <Switcher></Switcher>
-    <h1>{user?.displayName}</h1>
-    <img className='size-10 rounded-full' src={user?.photoURL} alt="User photo" />
+
+    {user? <>
+      <h1>{user.email}</h1>
+      <div className="w-10">
+      
+          <img className='rounded-full myDIV'
+            alt="Tailwind CSS Navbar component"
+            
+            src={`${user? user.photoURL: 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'}`} />
+        <div className="hide">{user.displayName}
+          <a onClick={handleLogout} className='btn bg-white'>Log out</a>
+        </div>
+        
+        </div>
       <a onClick={handleLogout} className='btn bg-white'>Log out</a>
-    <NavLink to={'/login'} className="btn">Login</NavLink>
+    </> : <NavLink className='btn bg-white'  to={'/login'}>Login</NavLink>}
   </div>
 </div>
     );

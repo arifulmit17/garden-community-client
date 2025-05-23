@@ -11,11 +11,11 @@ const MyTipsPage = () => {
     const tiplist=  mytips.filter(tip=>tip.email==user.email)
 
     return (
-        <div>
+        <div className='bg-green-200 dark:bg-green-700 dark:text-white'>
             <table className="table">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='dark:text-white'>
         <th>Image</th>
         <th>title</th>
         <th>Category</th>

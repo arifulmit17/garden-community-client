@@ -59,7 +59,7 @@ const Home = ({tipsPromise}) => {
             </section>
             <section>
                 
-                <h1 className='font-bold text-5xl text-center my-10'>Featured Gardeners <span style={{ color: 'green', fontWeight: 'bold' }}>
+                <h1 className='font-bold dark:text-white text-5xl text-center my-10'>Featured Gardeners <span style={{ color: 'green', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}
           <Typewriter
             words={['Section', 'Pool', 'Here']}
@@ -78,13 +78,13 @@ const Home = ({tipsPromise}) => {
                     }
                 </div>
             </section>
-            <section>
+            <section className='dark:text-white'>
                 <h1 className='font-bold text-5xl text-center my-10'>Top Trending Tips</h1>
                 <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
     <thead>
-      <tr>
+      <tr className='dark:text-white'>
         <th>Image</th>
         <th>title</th>
         <th>Category</th>
@@ -105,7 +105,7 @@ const Home = ({tipsPromise}) => {
 </div>
             </section>
 
-<section>
+<section className='dark:text-white'>
     <div className='w-full flex items-center justify-around'>
 <a className="bg-green-400 h-16 p-2 rounded-full my-anchor-element">◕‿‿◕</a>
 <a className="bg-green-400 h-16 p-2 rounded-full my-anchor-element">◕‿‿◕</a>
@@ -123,13 +123,13 @@ const Home = ({tipsPromise}) => {
                 </div>
                 <div className='w-7/12 mx-5 mb-5'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
-                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on creating a unique experience for our valued members through giving some opportunities that is rare in the subscription market. Benefits include.</p>
+                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for gardening enthusiasts for following benefits</p>
                     <ol className='h-1/2 mt-3 flex flex-col justify-between'>
-                      <li>1. Easily browse, subscribe to, and manage monthly subscription boxes based on your preferences</li>
+                      <li>1. Share tips, find local gardeners, ask plant care questions any time or on weekly discussions</li>
 
-                      <li>2. A personalized experience where customers can select different boxes for various products or services</li>
+                      <li>2. Post or join gardening events held on a weekly basis</li>
 
-                      <li>3. Each box is curated with items tailored to the user’s interests, ensuring that they receive something new and exciting each month</li>
+                      <li>3. Connect over shared interests like composting, hydroponics, balcony gardens</li>
                     </ol>
                     <NavLink to={'/register'}>
                      <button className='text-white ml-40 rounded-2xl btn bg-green-500 btn-wide'>Register Now</button>
@@ -138,19 +138,19 @@ const Home = ({tipsPromise}) => {
             </div>
             </section>
 
-            <section>
+            <section className='dark:text-white '>
                 <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
-                <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+                <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" defaultChecked />
-  <div className="collapse-title font-semibold">How do I create an account?</div>
+  <div className="collapse-title  font-semibold">How do I create an account?</div>
   <div className="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
 </div>
-<div className="collapse collapse-arrow bg-base-100 border border-base-300">
+<div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" />
   <div className="collapse-title font-semibold">I forgot my password. What should I do?</div>
   <div className="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
 </div>
-<div className="collapse collapse-arrow bg-base-100 border border-base-300">
+<div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" />
   <div className="collapse-title font-semibold">How do I update my profile information?</div>
   <div className="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
