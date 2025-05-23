@@ -53,6 +53,7 @@ const MytipsTableRow = ({tip,mytips,setMytips}) => {
         </td>
         <td>{tip.category}</td>
         <td>{tip.difficulty}</td>
+        <td>{tip.availability}</td>
         <td>{tip.totalliked}</td>
         <th>
             <button onClick={()=>handleDelete(tip._id)} className="btn text-white bg-green-600 btn-xs">Delete</button>
