@@ -11,6 +11,10 @@ import './Navbar.css'
 
 const Navbar = () => {
   const {user, LogOutUser}=use(AuthContext);
+
+  const handleclick=()=>{
+    document.getElementById('logout').classList.remove('hidden')
+  }
   
   const handleLogout=()=>{
       LogOutUser().then(()=>{
@@ -23,10 +27,10 @@ const Navbar = () => {
     }
     const links=<>
       <li><Link to={'/'}>Home</Link></li>
-      {user && <><li><NavLink to={'/sharegardentips'}>Share a Garden Tip (Private)</NavLink></li></>}
+      {user && <><li><NavLink to={'/sharegardentips'}>Share a Garden Tip </NavLink></li></>}
       <li><Link to={'/exploreGardners'}>Explore Gardeners</Link></li>
       <li><Link to={'/browsetips'}>Browse tips</Link></li>
-      {user && <><li><Link to={'/mytipspage'}>My Tips (Private)</Link></li></>}
+      {user && <><li><Link to={'/mytipspage'}>My Tips </Link></li></>}
       <li><Link to={'/register'}>Signup</Link></li>
     </>
     return (
@@ -57,16 +61,15 @@ const Navbar = () => {
       <h1>{user.email}</h1>
       <div className="w-10">
       
-          <img className='rounded-full myDIV'
+          <img onClick={handleclick} className='rounded-full myDIV'
             alt="Tailwind CSS Navbar component"
             
             src={`${user? user.photoURL: 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'}`} />
         <div className="hide">{user.displayName}
-          <a onClick={handleLogout} className='btn bg-white'>Log out</a>
         </div>
         
         </div>
-      <a onClick={handleLogout} className='btn bg-white'>Log out</a>
+      <a onClick={handleLogout} id='logout' className='btn hidden bg-white'>Log out</a>
     </> : <NavLink className='btn bg-white'  to={'/login'}>Login</NavLink>}
   </div>
 </div>
