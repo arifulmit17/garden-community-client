@@ -58,7 +58,7 @@ const Navbar = () => {
     <Switcher></Switcher>
 
     {user? <>
-      <h1>{user.email}</h1>
+      
       <div className="w-10">
       
           <img onClick={handleclick} className='rounded-full myDIV'

@@ -19,7 +19,7 @@ const BrowseTips = () => {
     return (
         
         <div className="overflow-x-auto dark:bg-green-700 dark:text-white bg-green-200">
-            <form onSubmit={handleSort} className='ml-100'>
+            <form onSubmit={handleSort} className='md:ml-50 lg:ml-100'>
                 <input type="text" name='difficulty' className="input" placeholder="Difficulty level" list="difficulty" />
                     <datalist id="difficulty">
                     <option value="Easy"></option>

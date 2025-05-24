@@ -62,7 +62,7 @@ const ShareGardenTips = () => {
                     <option value="Hidden"></option>
                     </datalist>
             <input type="text" name='totalliked' placeholder="total liked" className="input w-full" />
-            <input className='btn w-full ml-80 bg-green-500' value={'submit'} type='submit'/>
+            <input className='btn w-full md:ml-40 lg:ml-80 bg-green-500' value={'submit'} type='submit'/>
             </form>
             
 

@@ -21,7 +21,7 @@ const TipDetails = () => {
                         Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Your data has been updated",
+                        title: "Likes updated ,please reload",
                         showConfirmButton: false,
                         timer: 1500
                         });
@@ -40,12 +40,13 @@ const TipDetails = () => {
   <div className="card-body">
     <h2 className="card-title">Name: {tip.title}</h2>
     <p> {tip.description}</p>
+    <h2>Gardener: {tip.user}</h2>
     <h3>Category: {tip.category}</h3>
     <h2>Difficulty: {tip.difficulty}</h2>
     <h2>Likes: {tip.totalliked}</h2>
     <div className="card-actions justify-end">
         
-      <button onClick={()=>handleLike(tip._id)} className="btn bg-green-600">Like</button>
+      <button onClick={()=>handleLike(tip._id)} className="btn text-white border-none bg-green-600">Like</button>
     </div>
   </div>
 </div>

@@ -12,13 +12,25 @@ const Login = () => {
 
 
 	const handleGoogleSignIn=()=>{
-		console.log('signed in');
+		
 			  signInWithPopup(auth,provider).then(result=>{
 				console.log(result);
-				console.log('signin successful');
+				Swal.fire({
+			position: "top-end",
+			icon: "success",
+			title: "Login successful",
+			showConfirmButton: false,
+			timer: 1500
+			});
 				
 			  }).catch(error=>{
 				console.log(error);
+				Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Wrong email or password",
+				footer: '<a href="#">Why do I have this issue?</a>'
+				});
 			  })
 	}
 	
@@ -37,6 +49,12 @@ const Login = () => {
 			navigate('/')
 		}).catch(error=>{
 			console.log(error);
+			Swal.fire({
+			icon: "error",
+			title: "Oops...",
+			text: "Wrong email or password",
+			footer: '<a href="#">Why do I have this issue?</a>'
+			});
 		})
 	}
 	return (

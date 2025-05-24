@@ -41,17 +41,17 @@ const Home = ({tipsPromise}) => {
                 
                 
                           <SwiperSlide>
-                          <div className='h-[700px] w-full flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/svJrjqdD/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
+                          <div className='h-[700px] w-full flex lg:pl-30 gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.ibb.co/svJrjqdD/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
                           <button className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='h-[700px] w-full bg-no-repeat bg-cover flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/YBWyF8nv/29079-hd.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Care for Nature</h1>
+                            <div className='h-[700px] w-full bg-no-repeat bg-cover flex lg:pl-30 gap-10 items-center md:items-center flex-col justify-center lg:items-start bg-center bg-[url("https://i.ibb.co/YBWyF8nv/29079-hd.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Care for Nature</h1>
                           <button className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='h-[700px] w-full flex pl-30 gap-10 flex-col justify-center items-start bg-center bg-[url("https://i.ibb.co/fzhw2HH8/Garden-hero.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Be One with the Nature</h1>
+                            <div className='h-[700px] w-full flex lg:pl-30 gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.ibb.co/fzhw2HH8/Garden-hero.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Be One with the Nature</h1>
                           <button className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
@@ -59,7 +59,7 @@ const Home = ({tipsPromise}) => {
             </section>
             <section>
                 
-                <h1 className='font-bold dark:text-white text-5xl text-center my-10'>Featured Gardeners <span style={{ color: 'green', fontWeight: 'bold' }}>
+                <h1 className='font-bold dark:text-white text-5xl text-center my-10'>Featured Active Gardeners <span style={{ color: 'green', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}
           <Typewriter
             words={['Section', 'Pool', 'Here']}
@@ -132,7 +132,7 @@ const Home = ({tipsPromise}) => {
                       <li>3. Connect over shared interests like composting, hydroponics, balcony gardens</li>
                     </ol>
                     <NavLink to={'/register'}>
-                     <button className='text-white ml-40 rounded-2xl btn bg-green-500 btn-wide'>Register Now</button>
+                     <button className='text-white lg:ml-40 rounded-2xl btn bg-green-500 btn-wide'>Register Now</button>
                      </NavLink>
                 </div>
             </div>
