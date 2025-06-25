@@ -49,10 +49,18 @@ For server:
 Server repo link: https://github.com/arifulmit17/garden-community-server
 
 useful api: 
-Method : Get : /mytutor/:email
-Method : POST : /tutor
-Method : Get : /tutorials
-Method : Get : /tutorials/:id
-Method : Get : /mytutorials/:email
-Method : POST : /tutorials
+<ul>
+  <li>Method : Get : /mytutor/:email</li>
+  <li>Method : Get : /tutorials</li>
+  <li>Method : Get : /tutorials/:id</li>
+  <li>Method : Get : /mytutorials/:email</li>
+  <li>Method : POST : /tutor</li>
+  <li>Method : POST : /tutorials</li>
+</ul>
+
+
+
+
+
+
 
