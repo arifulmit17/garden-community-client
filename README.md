@@ -23,16 +23,22 @@ Project dependencies:
 For Client:
 
 <ul>
-  <li>"@tailwindcss/vite": "^4.1.8",</li>
+  <li>"@tailwindcss/vite": "^4.1.7",</li>
   <li>"axios": "^1.9.0",</li>
-  <li>"firebase": "^11.8.1",</li>
+  <li>"firebase": "^11.7.3",</li>
   <li>"react": "^19.1.0",</li>
   <li>"react-dom": "^19.1.0",</li>
   <li>"react-icons": "^5.5.0",</li>
-  <li>"react-router": "^7.6.1",</li>
+  <li>"react-router": "^7.6.0",</li>
   <li>"react-toggle-dark-mode": "^1.1.1",</li>
-  <li>"sweetalert2": "^11.22.0"</li>
+  <li>"react-simple-typewriter": "^5.0.1",</li>
+  <li>"react-slick": "^0.30.3",</li>
+  <li>"react-slideshow-image": "^4.3.2"</li>
+  <li>"react-tooltip": "^5.28.1",</li>
+  <li>"swiper": "^11.2.6",</li>
+  <li>"sweetalert2": "^11.21.2"</li>
 </ul>
+
 
 For server:
 
@@ -40,8 +46,7 @@ For server:
   <li>"cors": "^2.8.5",</li>
   <li>"dotenv": "^16.5.0",</li>
   <li>"express": "^5.1.0",</li>
-  <li>"jsonwebtoken": "^9.0.2",</li>
-  <li>"mongodb": "^6.17.0"</li>
+  <li>"mongodb": "^6.16.0"</li>
 </ul>
 
     
@@ -50,11 +55,13 @@ Server repo link: https://github.com/arifulmit17/garden-community-server
 
 useful api: 
 <ul>
-  <li>Method : Get : /mytutor/:email</li>
-  <li>Method : Get : /tutorials</li>
-  <li>Method : Get : /tutorials/:id</li>
-  <li>Method : Get : /mytutorials/:email</li>
-  <li>Method : POST : /tutor</li>
+  <li>Method : Get : /gardens</li>
+  <li>Method : Get : /gardens_public</li>
+  <li>Method : Get : /gardens_user</li>
+  <li>Method : Get : /gardeners</li>
+  <li>Method : Get : /gardeners_full</li>
+  <li>Method : Get : /gardens/:id</li>
+  <li>Method : POST : /gardens</li>
   <li>Method : POST : /tutorials</li>
 </ul>
 
