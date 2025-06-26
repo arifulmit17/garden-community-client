@@ -19,8 +19,10 @@ import TipDetails from './Pages/TipDetails.jsx';
 import MyTipsPage from './Pages/MyTipsPage.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
 import UpdateTips from './Pages/UpdateTips.jsx';
+import DashboardLayout from './Layout/DashboardLayout.jsx';
+import Stats from './Pages/Dashboard/Stats.jsx';
 
-const tipsPromise=fetch('https://b11a10garden-community-server.vercel.app/gardens').then(res=>res.json())
+const tipsPromise=fetch(`${import.meta.env.VITE_API_URL}/gardens`).then(res=>res.json())
     
 
 const router = createBrowserRouter([
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
       {
         index:true, 
         
-        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardeners'),
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardeners`),
         element: <Suspense loader={<h1>Data is loading</h1>}>
           <Home tipsPromise={tipsPromise}></Home>
         </Suspense>
@@ -47,7 +49,7 @@ const router = createBrowserRouter([
       {
         path: '/exploreGardners',
         Component: ExploreGardners,
-        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardeners_full')
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardeners_full`)
       },
       {
         path: '/sharegardentips',
@@ -62,7 +64,7 @@ const router = createBrowserRouter([
               <MyTipsPage></MyTipsPage>
         </PrivateRoutes>,
         // loader: ()=>fetch('http://localhost:3000/gardens_user')
-        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardens_user')
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardens_user`)
         
       },
       {
@@ -70,7 +72,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
               <UpdateTips></UpdateTips>
         </PrivateRoutes>,
-        loader: ({params})=>fetch(`https://b11a10garden-community-server.vercel.app/gardens/${params.id}`)
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/gardens/${params.id}`)
         
       },
       {
@@ -78,20 +80,46 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
               <TipDetails></TipDetails>
         </PrivateRoutes>,
-        loader: ({params})=>fetch(`https://b11a10garden-community-server.vercel.app/gardens/${params.id}`)
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/gardens/${params.id}`)
         
         
       },
       {
         path: '/browsetips',
         Component: BrowseTips,
-        loader: ()=>fetch('https://b11a10garden-community-server.vercel.app/gardens_public')
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardens_public`)
       }
     ]
   },
   {
           path: '/*',
           element: <ErrorPage></ErrorPage>
+  },
+  {
+    path: '/dashboard',
+    element: <PrivateRoutes>
+      <DashboardLayout></DashboardLayout>
+    </PrivateRoutes>,
+    children: [
+      {
+        index:true,
+        element: <PrivateRoutes>
+          <Stats></Stats>
+        </PrivateRoutes>
+      },
+      {
+        path: 'dashtips',
+        Component: BrowseTips,
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardens_public`)
+      },
+      {
+        path: 'dashmytips',
+        element: <PrivateRoutes>
+          <MyTipsPage></MyTipsPage>
+        </PrivateRoutes>,
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardens_user`)
+      }
+    ]
   }
 ]);
 createRoot(document.getElementById('root')).render(

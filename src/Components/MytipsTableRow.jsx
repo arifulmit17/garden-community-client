@@ -14,7 +14,7 @@ const MytipsTableRow = ({tip,mytips,setMytips}) => {
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-    fetch(`https://b11a10garden-community-server.vercel.app/gardens/${id}`,{
+    fetch(`${import.meta.env.VITE_API_URL}/gardens/${id}`,{
         method: 'DELETE'
     }).then(res=>res.json()).then(data=>{
         if(data.deletedCount){

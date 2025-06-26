@@ -1,5 +1,5 @@
 import React, { use } from 'react';
-import { NavLink, useLoaderData } from 'react-router';
+import { NavLink, useLoaderData, useNavigate } from 'react-router';
 import Gardener from './Gardener';
 import TipsTableRows from '../Components/TipsTableRows';
 import { Tooltip } from 'react-tooltip'
@@ -19,7 +19,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Home = ({tipsPromise}) => {
     const gardeners=useLoaderData()
-    
+    const navigate=useNavigate()
     const tips=use(tipsPromise)
     
     
@@ -41,18 +41,18 @@ const Home = ({tipsPromise}) => {
                 
                 
                           <SwiperSlide>
-                          <div className='h-[700px] w-full flex lg:pl-30 gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.ibb.co/svJrjqdD/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
-                          <button className="bg-green-500 border-none text-white btn">Explore Now</button>
+                          <div className='h-[400px] w-full flex lg:pl-30 bg-cover gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.postimg.cc/ZRCT08P5/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
+                          <button onClick={()=>{navigate('/register')}} className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='h-[700px] w-full bg-no-repeat bg-cover flex lg:pl-30 gap-10 items-center md:items-center flex-col justify-center lg:items-start bg-center bg-[url("https://i.ibb.co/YBWyF8nv/29079-hd.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Care for Nature</h1>
-                          <button className="bg-green-500 border-none text-white btn">Explore Now</button>
+                            <div className='h-[400px] w-full bg-no-repeat bg-cover flex lg:pl-30 gap-10 items-center md:items-center flex-col justify-center lg:items-start bg-center bg-[url("https://i.postimg.cc/qv442VcY/29079-hd.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Care for Nature</h1>
+                          <button onClick={()=>{navigate('/register')}} className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className='h-[700px] w-full flex lg:pl-30 gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.ibb.co/fzhw2HH8/Garden-hero.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Be One with the Nature</h1>
-                          <button className="bg-green-500 border-none text-white btn">Explore Now</button>
+                            <div className='h-[400px] w-full flex lg:pl-30 bg-cover gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.postimg.cc/3wbhMyM5/Garden-hero.jpg")]'><h1 className='text-center text-green-200 text-7xl'>Be One with the Nature</h1>
+                          <button onClick={()=>{navigate('/register')}} className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
                       </Swiper>
@@ -119,7 +119,7 @@ const Home = ({tipsPromise}) => {
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
                 <div className='w-5/12 '>
-                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.ibb.co/JXrFNDY/member.png" alt="" />
+                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.postimg.cc/fTt62xhY/member.png" alt="" />
                 </div>
                 <div className='w-7/12 mx-5 mb-5'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>

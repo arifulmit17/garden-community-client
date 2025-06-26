@@ -28,13 +28,14 @@ const Navbar = () => {
     const links=<>
       <li><Link to={'/'}>Home</Link></li>
       {user && <><li><NavLink to={'/sharegardentips'}>Share a Garden Tip </NavLink></li></>}
+      {user && <><li><NavLink to={'/dashboard'}>Dashboard </NavLink></li></>}
       <li><Link to={'/exploreGardners'}>Explore Gardeners</Link></li>
       <li><Link to={'/browsetips'}>Browse tips</Link></li>
       {user && <><li><Link to={'/mytipspage'}>My Tips </Link></li></>}
       <li><Link to={'/register'}>Signup</Link></li>
     </>
     return (
-        <div className="navbar bg-green-300 dark:text-white dark:bg-green-900 shadow-sm">
+        <div id='navbar' className="z-20 navbar bg-green-300 dark:text-white dark:bg-green-900 shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +47,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl"> <span className='text-green-800 dark:text-green-300'>Garden</span>Community</a>
+    <a className="ml-5 btn btn-ghost text-xl"> <span className='text-green-800 dark:text-green-300'>Garden</span>Community</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -54,12 +55,14 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    <div className=' mt-2 h-8 '>
+      <Switcher></Switcher>
+    </div>
     
-    <Switcher></Switcher>
 
     {user? <>
       
-      <div className="w-10">
+      <div className="mx-10 w-10">
       
           <img onClick={handleclick} className='rounded-full myDIV'
             alt="Tailwind CSS Navbar component"
@@ -69,7 +72,7 @@ const Navbar = () => {
         </div>
         
         </div>
-      <a onClick={handleLogout} id='logout' className='btn hidden bg-white'>Log out</a>
+      <a onClick={handleLogout} id='logout' className='mr-10 btn hidden bg-white'>Log out</a>
     </> : <NavLink className='btn bg-white'  to={'/login'}>Login</NavLink>}
   </div>
 </div>

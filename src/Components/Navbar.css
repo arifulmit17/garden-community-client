@@ -10,3 +10,9 @@
     display: block;
     color: red;
   }
+
+  #navbar {
+  position: sticky;
+  top: 0;
+ 
+}

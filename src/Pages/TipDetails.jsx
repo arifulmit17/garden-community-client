@@ -10,7 +10,7 @@ const TipDetails = () => {
         const newlike=parseInt(tip.totalliked)+1
         const like={totalliked:newlike}
         console.log(like);
-        fetch(`https://b11a10garden-community-server.vercel.app/gardens_like/${_id}`,{
+        fetch(`${import.meta.env.VITE_API_URL}/gardens_like/${_id}`,{
                     method: 'PUT',
                     headers: {
                         'content-type':'application/json'

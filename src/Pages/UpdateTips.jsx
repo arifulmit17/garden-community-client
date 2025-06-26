@@ -15,7 +15,7 @@ const UpdateTips = () => {
         const newGarden = Object.fromEntries(formData.entries())
         console.log(newGarden);
 
-        fetch(`https://b11a10garden-community-server.vercel.app/gardens/${_id}`,{
+        fetch(`${import.meta.env.VITE_API_URL}/gardens/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type':'application/json'
