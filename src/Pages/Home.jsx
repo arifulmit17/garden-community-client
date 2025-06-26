@@ -16,6 +16,7 @@ import './styles.css';
 
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Typewriter } from 'react-simple-typewriter';
+import TrendingTipsCard from './TrendingTipsCard';
 
 const Home = ({tipsPromise}) => {
     const gardeners=useLoaderData()
@@ -41,7 +42,7 @@ const Home = ({tipsPromise}) => {
                 
                 
                           <SwiperSlide>
-                          <div className='h-[400px] w-full flex lg:pl-30 bg-cover gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.postimg.cc/ZRCT08P5/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-800 text-7xl'>Grow Together</h1>
+                          <div className='h-[400px] w-full flex lg:pl-30 bg-cover gap-10 flex-col justify-center items-center md:items-center lg:items-start bg-center bg-[url("https://i.postimg.cc/ZRCT08P5/c89e77-i-Stock-1364679535.jpg")]'><h1 className='text-center text-green-400 text-7xl'>Grow Together</h1>
                           <button onClick={()=>{navigate('/register')}} className="bg-green-500 border-none text-white btn">Explore Now</button>
                           </div>
                         </SwiperSlide>
@@ -57,6 +58,40 @@ const Home = ({tipsPromise}) => {
                         </SwiperSlide>
                       </Swiper>
             </section>
+
+<section className='dark:text-white'>
+                <h1 className='font-bold text-5xl text-center my-10'>Top Trending Tips</h1>
+                <div className="overflow-x-auto">
+
+                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+                    {
+                   tips.map(tip=><TrendingTipsCard tip={tip}></TrendingTipsCard>)
+                    }
+                  </div>
+  {/* <table className="table">
+    
+    <thead>
+      <tr className='dark:text-white'>
+        <th>Image</th>
+        <th>title</th>
+        <th>Category</th>
+        <th>Difficulty</th>
+        <th>Likes</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      {
+         tips.map(tip=><TipsCard tip={tip}></TipsCard>)
+      }
+      
+      
+    </tbody>
+    
+  </table> */}
+</div>
+            </section>
+
             <section>
                 
                 <h1 className='font-bold dark:text-white text-5xl text-center my-10'>Featured Active Gardeners <span style={{ color: 'green', fontWeight: 'bold' }}>
@@ -72,38 +107,13 @@ const Home = ({tipsPromise}) => {
 
           />
         </span></h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6' >
                     {
                         gardeners.map(gardener=><Gardener key={gardener._id} gardener={gardener}></Gardener>)
                     }
                 </div>
             </section>
-            <section className='dark:text-white'>
-                <h1 className='font-bold text-5xl text-center my-10'>Top Trending Tips</h1>
-                <div className="overflow-x-auto">
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr className='dark:text-white'>
-        <th>Image</th>
-        <th>title</th>
-        <th>Category</th>
-        <th>Difficulty</th>
-        <th>Likes</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      {
-         tips.map(tip=><TipsTableRows tip={tip}></TipsTableRows>)
-      }
-      
-      
-    </tbody>
-    
-  </table>
-</div>
-            </section>
+            
 
 <section className='dark:text-white'>
     <div className='w-full flex items-center justify-around'>

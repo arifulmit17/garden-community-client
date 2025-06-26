@@ -21,6 +21,7 @@ import ErrorPage from './Pages/ErrorPage.jsx';
 import UpdateTips from './Pages/UpdateTips.jsx';
 import DashboardLayout from './Layout/DashboardLayout.jsx';
 import Stats from './Pages/Dashboard/Stats.jsx';
+import Allitems from './Pages/Dashboard/Allitems.jsx';
 
 const tipsPromise=fetch(`${import.meta.env.VITE_API_URL}/gardens`).then(res=>res.json())
     
@@ -109,7 +110,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashtips',
-        Component: BrowseTips,
+        Component: Allitems,
         loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardens_public`)
       },
       {

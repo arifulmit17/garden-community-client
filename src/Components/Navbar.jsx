@@ -30,7 +30,7 @@ const Navbar = () => {
       {user && <><li><NavLink to={'/sharegardentips'}>Share a Garden Tip </NavLink></li></>}
       {user && <><li><NavLink to={'/dashboard'}>Dashboard </NavLink></li></>}
       <li><Link to={'/exploreGardners'}>Explore Gardeners</Link></li>
-      <li><Link to={'/browsetips'}>Browse tips</Link></li>
+      <li><Link to={'/browsetips'}>All tips</Link></li>
       {user && <><li><Link to={'/mytipspage'}>My Tips </Link></li></>}
       <li><Link to={'/register'}>Signup</Link></li>
     </>

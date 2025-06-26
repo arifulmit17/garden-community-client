@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router';
-import TipsTableRows from '../Components/TipsTableRows';
-import TipsCard from './TipsCard';
+import TipsTableRows from '../../Components/TipsTableRows';
 
-const BrowseTips = () => {
-    
+const Allitems = () => {
     const gardentips=useLoaderData();
     const [prefered,setPrefered]=useState(gardentips)
     const handleSort=e=>{
@@ -19,7 +17,7 @@ const BrowseTips = () => {
     }
     return (
         
-        <div className="overflow-x-auto dark:bg-green-700 bg-gray-100 dark:text-white ">
+        <div className="overflow-x-auto dark:bg-green-700 dark:text-white bg-green-200">
             <form onSubmit={handleSort} className='md:ml-50 lg:ml-100'>
                 <input type="text" name='difficulty' className="input" placeholder="Difficulty level" list="difficulty" />
                     <datalist id="difficulty">
@@ -29,13 +27,9 @@ const BrowseTips = () => {
                     </datalist>
                 <button type='submit' className='btn ml-5 dark:bg-green-300 dark:text-black border-none text-white bg-green-800'>Submit</button>
             </form>
-           <div>
-            {
-            prefered.map(tip=><TipsCard tip={tip}></TipsCard>)
-             }
-           </div>
-  {/* <table className="table dark:text-white">
-    
+           
+  <table className="table dark:text-white">
+    {/* head */}
     <thead>
       <tr className='dark:text-white'>
         <th>Image</th>
@@ -46,7 +40,7 @@ const BrowseTips = () => {
       </tr>
     </thead>
     <tbody>
-      
+      {/* row 1 */}
       {
         prefered.map(tip=><TipsTableRows tip={tip}></TipsTableRows>)
       }
@@ -54,9 +48,9 @@ const BrowseTips = () => {
       
     </tbody>
     
-  </table> */}
+  </table>
 </div>
     );
 };
 
-export default BrowseTips;
+export default Allitems;
