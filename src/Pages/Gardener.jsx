@@ -2,7 +2,7 @@ import React from 'react';
 
 const Gardener = ({gardener}) => {
     return (
-        <div className="card lg:card-side bg-green-100 dark:bg-green-800 dark:text-white shadow-sm">
+        <div className="card lg:card-side bg-green-100 dark:bg-green-600 dark:text-white shadow-sm">
   <figure className='size-[300px] lg:size-[200px]'>
     <img 
       src={gardener.image}

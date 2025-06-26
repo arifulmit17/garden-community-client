@@ -1,26 +1,42 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
+import { useLoaderData } from 'react-router';
 
 const Stats = () => {
     const {user}=use(AuthContext)
+    const [mytips,setMytips]=useState([])
+    const tips=useLoaderData()
+    let tipnum=tips.length
+    fetch(`${import.meta.env.VITE_API_URL}/gardens_user`).then(res=>res.json()).then(data=>
+        setMytips(data)
+    )
+    const tiplist=  mytips.filter(tip=>tip.email==user.email)
     return (
         <div className="stats stats-vertical lg:stats-horizontal shadow">
-  <div className="stat">
-    <div className="stat-title text-2xl">User</div>
-    <div className="stat-value">{user.displayName}</div>
-  </div>
+            
+            <div className='w-2/3 '>
+    <div className="stat w-full bg-green-200 my-5">
+        <div className=" font-bold text-2xl">User Name</div>
+         <div className="text-3xl">{user.displayName}</div>
+    </div>
 
-  <div className="stat">
-    <div className="stat-title text-2xl">User Email</div>
-     <div className="stat-value">{user.email}</div>
-    <div className="stat-desc">↗︎ 400 (22%)</div>
+     <div className="stat bg-green-200">
+          <div className=" font-bold text-2xl">User Email</div>
+           <div className="text-3xl">{user.email}</div>
+     </div>
+            </div>
+  
+        <div className='w-2/3'>
+<div className="stat w-full bg-green-300 my-5">
+    <div className="text-2xl">Number of total tips</div>
+    <div className="stat-value">{tipnum}</div>
   </div>
-
-  <div className="stat">
-    <div className="stat-title">New Registers</div>
-    <div className="stat-value">1,200</div>
-    <div className="stat-desc">↘︎ 90 (14%)</div>
+  <div className="stat w-full bg-green-300">
+    <div className="text-2xl">Number of tips from user</div>
+    <div className="stat-value">{tiplist.length}</div>
   </div>
+        </div>
+  
 </div>
     );
 };

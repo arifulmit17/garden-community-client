@@ -63,7 +63,7 @@ const Home = ({tipsPromise}) => {
                 <h1 className='font-bold text-5xl text-center my-10'>Top Trending Tips</h1>
                 <div className="overflow-x-auto">
 
-                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+                  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-5'>
                     {
                    tips.map(tip=><TrendingTipsCard tip={tip}></TrendingTipsCard>)
                     }
@@ -107,7 +107,7 @@ const Home = ({tipsPromise}) => {
 
           />
         </span></h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6' >
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-5' >
                     {
                         gardeners.map(gardener=><Gardener key={gardener._id} gardener={gardener}></Gardener>)
                     }
@@ -115,7 +115,7 @@ const Home = ({tipsPromise}) => {
             </section>
             
 
-<section className='dark:text-white'>
+<section className='dark:text-white mt-10'>
     <div className='w-full flex items-center justify-around'>
 <a className="bg-green-400 h-16 p-2 rounded-full my-anchor-element">◕‿‿◕</a>
 <a className="bg-green-400 h-16 p-2 rounded-full my-anchor-element">◕‿‿◕</a>
@@ -126,20 +126,20 @@ const Home = ({tipsPromise}) => {
     Hello Gardeners !
 </Tooltip>
 
-                <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
+                <h1 className='font-bold text-5xl text-center my-10'>Offers for Members</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
                 <div className='w-5/12 '>
                     <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.postimg.cc/fTt62xhY/member.png" alt="" />
                 </div>
                 <div className='w-7/12 mx-5 mb-5'>
-                    <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
-                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for gardening enthusiasts for following benefits</p>
+                    <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Offers</h1>
+                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for gardening enthusiasts for following offers</p>
                     <ol className='h-1/2 mt-3 flex flex-col justify-between'>
-                      <li>1. Share tips, find local gardeners, ask plant care questions any time or on weekly discussions</li>
+                      <li>1. Share tips, find local gardeners, ask plant care questions for free</li>
 
-                      <li>2. Post or join gardening events held on a weekly basis</li>
+                      <li>2. Join for exclusive entry in gardening events</li>
 
-                      <li>3. Connect over shared interests like composting, hydroponics, balcony gardens</li>
+                      <li>3. Free tips on shared interests like composting, hydroponics, balcony gardens</li>
                     </ol>
                     <NavLink to={'/register'}>
                      <button className='text-white lg:ml-40 rounded-2xl btn bg-green-500 btn-wide'>Register Now</button>

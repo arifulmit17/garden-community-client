@@ -106,7 +106,8 @@ const router = createBrowserRouter([
         index:true,
         element: <PrivateRoutes>
           <Stats></Stats>
-        </PrivateRoutes>
+        </PrivateRoutes>,
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardens_public`)
       },
       {
         path: 'dashtips',
@@ -119,6 +120,12 @@ const router = createBrowserRouter([
           <MyTipsPage></MyTipsPage>
         </PrivateRoutes>,
         loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardens_user`)
+      },
+      {
+        path: 'dashaddtips',
+        element:<PrivateRoutes>
+          <ShareGardenTips></ShareGardenTips>
+        </PrivateRoutes>
       }
     ]
   }
@@ -128,6 +135,5 @@ createRoot(document.getElementById('root')).render(
     <AuthProvider>
           <RouterProvider router={router} />
     </AuthProvider>
-    
   </StrictMode>,
 )
