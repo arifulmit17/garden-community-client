@@ -47,7 +47,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="ml-5 btn btn-ghost text-xl"> <span className='text-green-800 dark:text-green-300'>Garden</span>Community</a>
+    <a className="ml-10 font-bold text-xl"> <span className='text-green-800 dark:text-green-300'>Garden</span> Community</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
