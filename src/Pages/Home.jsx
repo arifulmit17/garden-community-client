@@ -147,7 +147,20 @@ const Home = ({tipsPromise}) => {
                 </div>
             </div>
             </section>
+            <section className='mx-5 '>
+              <h1 className='font-bold text-5xl text-center dark:text-white my-10'>Promotional Section</h1>
+              <div className='flex flex-col rounded-2xl bg-green-300 dark:bg-green-600 dark:text-white lg:flex-row'>
+                <div className='mx-auto lg:ml-20 mt-10 w-[300px] lg:w-[500px] h-[300px] '>
+                  <img className='rounded-2xl' src="https://i.postimg.cc/8CsCzwFj/gardening-1521662873.jpg" alt="gardening" />
+                </div>
+                <div className='mb-5 ml-5 flex flex-col justify-center items-center '>
+                  <h1 className='mb-10 text-3xl lg:text-5xl'>Let's start gardening</h1>
 
+                  <h1 className='text-2xl lg:text-4xl'>Upto 50% Off this summer</h1>
+                </div>
+              </div>
+
+            </section>
             <section className='dark:text-white '>
                 <h1 className='font-bold text-5xl text-center my-10'>F.A.Q</h1>
                 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
