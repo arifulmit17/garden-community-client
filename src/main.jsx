@@ -126,6 +126,13 @@ const router = createBrowserRouter([
         element:<PrivateRoutes>
           <ShareGardenTips></ShareGardenTips>
         </PrivateRoutes>
+      },
+      {
+        path: 'dashgardeners',
+        element: <PrivateRoutes>
+          <ExploreGardners></ExploreGardners>
+        </PrivateRoutes>,
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/gardeners_full`)
       }
     ]
   }

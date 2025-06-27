@@ -5,9 +5,9 @@ const TrendingTipsCard = ({tip}) => {
     return (
         <div className="card card-side  dark:bg-green-600 bg-green-100 shadow-sm">
   <figure className=''>
-    <img className='mb-30 w-[100px] h-[100px]'
+    <img className='mb-50 rounded-2xl w-[100px] h-[100px]'
       src={tip.photo}
-      alt="Movie" />
+      alt="tips" />
   </figure>
   <div className="card-body w-1/2">
     <h2 className="card-title">{tip.title}</h2>

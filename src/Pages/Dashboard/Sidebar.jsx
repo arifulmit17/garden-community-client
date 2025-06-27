@@ -19,6 +19,7 @@ const Sidebar = () => {
       <li><Link to={'dashtips'}>All tips</Link></li>
       {user && <><li><Link to={'dashmytips'}>My Tips </Link></li></>}
       {user && <><li><Link to={'dashaddtips'}>Add Tips </Link></li></>}
+      {user && <><li><Link to={'dashgardeners'}>Gardeners </Link></li></>}
     </ul>
   </div>
 </div>

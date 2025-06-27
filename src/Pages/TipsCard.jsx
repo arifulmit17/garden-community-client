@@ -5,7 +5,7 @@ const TipsCard = ({tip}) => {
     return (
         <div className="card card-side my-5 dark:bg-green-600 bg-green-100 shadow-sm">
   <figure>
-    <img className='w-50'
+    <img className='w-50 h-[200px] rounded-2xl'
       src={tip.photo}
       alt="Movie" />
   </figure>

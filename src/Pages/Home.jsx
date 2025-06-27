@@ -107,7 +107,7 @@ const Home = ({tipsPromise}) => {
 
           />
         </span></h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-5' >
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mx-5' >
                     {
                         gardeners.map(gardener=><Gardener key={gardener._id} gardener={gardener}></Gardener>)
                     }
